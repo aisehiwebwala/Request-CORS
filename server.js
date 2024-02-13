@@ -9,7 +9,7 @@ app.use("/api", (req, res) => {
   request(`https://google.rtilinks.com/url?a=+${url}`, function (error, response, body) {
   res.send(body);
 });
-  app.use("/api2", (req, res) => {
+app.use("/api2", (req, res) => {
   let url = req.query.url;
   request(url, function (error, response, body) {
   res.send(body);
