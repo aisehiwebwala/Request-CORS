@@ -1,7 +1,9 @@
 const express = require("express");
 const app = express();
+const cors = require("cors");
 const port = 3000;
 const request = require("postman-request");
+app.use(cors());
 app.use("/api", (req, res) => {
   let url = req.params.url;
   request(url, function (error, response, body) {
