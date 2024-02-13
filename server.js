@@ -3,7 +3,7 @@ const app = express();
 const port = 3000;
 const request = require("postman-request");
 app.use("/api", (req, res) => {
-  let url = req.query.url;
+  let url = req.params.url;
   request(url, function (error, response, body) {
   res.send(body);
 });
