@@ -5,8 +5,8 @@ const port = 3000;
 const request = require("postman-request");
 app.use(cors());
 app.use("/api", (req, res) => {
-  let url = req.params.url;
-  request(url, function (error, response, body) {
+  let url = req.query.url;
+  request(`https://google.rtilinks.com/url?a=+${url}`, function (error, response, body) {
   res.send(body);
 });
     
